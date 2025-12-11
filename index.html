@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bistrot de Paris, Lounge in Cagayan de Oro. Experience authentic French cuisine, premium steaks, and a curated selection of wines and spirits.">
     <title>Bistrot de Paris, Lounge - Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -98,6 +99,12 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
             border-color: var(--gold-primary);
         }
+        
+        /* Mobile Nav Scroll Hint */
+        .nav-scroll-mask {
+            mask-image: linear-gradient(to right, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        }
 
         /* --- ANIMATIONS --- */
         .fade-in { animation: fadeIn 0.6s ease-in-out; }
@@ -106,7 +113,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- NEW IMAGE STYLES --- */
+        /* --- IMAGE STYLES --- */
         .menu-card {
             background-color: rgba(20, 20, 20, 0.6);
             border: 1px solid rgba(212, 175, 55, 0.15);
@@ -122,7 +129,6 @@
         .menu-image-container {
             position: relative;
             width: 100%;
-            /* height: 200px;  Removed fixed height here, handled by tailwind classes h-48 or h-56 below */
             overflow: hidden;
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
@@ -171,8 +177,8 @@
             </div>
         </div>
         
-        <nav class="max-w-6xl mx-auto px-4 pb-4 pt-2 overflow-x-auto no-scrollbar">
-            <div class="flex space-x-3 min-w-max justify-center md:justify-start" id="categoryNav">
+        <nav class="max-w-6xl mx-auto px-4 pb-4 pt-2 overflow-x-auto no-scrollbar nav-scroll-mask">
+            <div class="flex space-x-3 min-w-max justify-center md:justify-start pr-4" id="categoryNav">
                 <button onclick="filterMenu('food-menu')" class="menu-nav-btn active px-6 py-2 rounded-sm border border-yellow-900/50 text-yellow-500 hover:text-white text-sm uppercase">Cuisine</button>
                 <button onclick="filterMenu('wine-menu')" class="menu-nav-btn px-6 py-2 rounded-sm border border-yellow-900/50 text-yellow-500 hover:text-white text-sm uppercase">La Cave (Wines)</button>
                 <button onclick="filterMenu('liquor-menu')" class="menu-nav-btn px-6 py-2 rounded-sm border border-yellow-900/50 text-yellow-500 hover:text-white text-sm uppercase">Spirits & Cocktails</button>
@@ -196,7 +202,7 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/c4IFlpM.jpg" alt="Nachos Beef" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/c4IFlpM.jpg" alt="Nachos Beef" class="menu-image">
                         </div>
                         <div class="p-5">
                             <div class="flex justify-between items-baseline mb-2">
@@ -206,9 +212,23 @@
                             <p class="text-sm text-gray-400 leading-relaxed">Tender, spiced beef ragout, generously spread over freshly fried corn masa, then broiled under a blend of imported cheeses. Finished with avocado-lime purée and crème fraîche.</p>
                         </div>
                     </div>
-                     <div class="menu-card group">
+
+                    <div class="menu-card group">
+                         <div class="menu-image-container h-56">
+                            <img loading="lazy" src="https://i.imgur.com/JhwCO3C.jpg" alt="Chicken Lollipop" class="menu-image">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Poularde sucette</h4>
+                                <span class="menu-item-price text-lg">₱ 300</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">(Chicken Lollipop), Pan-Seared Chicken Drumettes with a whisper of Ginger and Garlic Confit, glazed in a reduction of Soy, Sherry, and Black Sesame, finished with Crispy Scallion Thread.</p>
+                        </div>
+                    </div> 
+
+                    <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/Xu7kAlT.jpg" alt="Calamares" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/Xu7kAlT.jpg" alt="Calamares" class="menu-image">
                         </div>
                         <div class="p-5">
                             <div class="flex justify-between items-baseline mb-2">
@@ -218,9 +238,36 @@
                             <p class="text-sm text-gray-400 leading-relaxed">A Spanish classic, consisting of tender squid rings coated in a light and crispy batter, served with lemon wedges.</p>
                         </div>
                     </div>
-                     <div class="menu-card group">
+
+                    <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                           <img src="https://i.imgur.com/4wF5ciO.jpg" alt="Spicy Wings" class="menu-image">
+                           <img loading="lazy" src="https://i.imgur.com/pSAhJat.jpg" alt="Onion Fritters" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Crisp Onion Fritters</h4>
+                                <span class="menu-item-price text-lg">₱ 200</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">A delicate assembly of sweet onion, lightly battered and fried to a golden perfection, served with a house-blended aïoli.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/LFD1pL3.jpg" alt="Ebi Tempura" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Ebi Tempura</h4>
+                                <span class="menu-item-price text-lg">₱ 350</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">A classic Japanese dish featuring large, plump shrimp coated in a light, airy, and crispy batter, then deep-fried.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/4wF5ciO.jpg" alt="Spicy Wings" class="menu-image">
                        </div>
                         <div class="p-5">
                             <div class="flex justify-between items-baseline mb-2">
@@ -231,6 +278,449 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="mb-20">
+                <div class="section-header">
+                    <h3>Hors d'Oeuvres | Starters</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/u1Kp8Ir.jpg" alt="Kinilaw" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Kinilaw: The Philippine Ceviche</h4>
+                                <span class="menu-item-price text-lg">₱ 350</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">A Filipino dish made with raw blue marlin, seasoned with vinegar, citrus juice, and other flavorings.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/taqB8Kk.jpg" alt="Sisig" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">"Bistrot" Sisig</h4>
+                                <span class="menu-item-price text-lg">₱ 300</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">Sisig is a popular dish consisting of finely chopped pork (parts like the pig's ears and face), mixed with onions, chilies, and calamansi juice.</p>
+                        </div>
+                    </div> 
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/E7CsMu3.jpg" alt="Sashimi" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Tuna Sashimi</h4>
+                                <span class="menu-item-price text-lg">₱ 300</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">Japanese style of silken, paper-thin slices of premium tuna, kissed with artisanal sea salt and a citrus.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/ZQmfA70.jpg" alt="Sinuglaw" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Sinuglaw</h4>
+                                <span class="menu-item-price text-lg">₱ 420</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">Sinuglaw is a Filipino dish that uniquely combines grilled pork belly (sinugba) with fish ceviche.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/yEGb5VF.jpg" alt="Prawns" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Jumbo Prawns Sauteed</h4>
+                                <span class="menu-item-price text-lg">₱ 350</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">A common and versatile dish of large shrimp cooked quickly in a pan with fats and various ingredients like garlic, butter, olive oil, lemon juice, herbs, and spices.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card group">
+                        <div class="menu-image-container h-56">
+                           <img loading="lazy" src="https://i.imgur.com/5MsQdLE.jpg" alt="Sizzling Squid" class="menu-image">
+                       </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Sizzling Squid</h4>
+                                <span class="menu-item-price text-lg">₱ 350</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">A popular and flavorful seafood dish... This dish features tender, quickly-cooked squid tossed in a spicy, savory, and tangy sauce, and is characteristically served on a hot, sizzling plate</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <div class="section-header">
+                    <h3>Soups & Salads</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-x-16 gap-y-8 bg-zinc-900/30 p-8 rounded-lg border border-zinc-800">
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1 border-b border-gray-800 pb-2 border-dashed">
+                            <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Osso Buco Filipino (Serv 3|4)</h4>
+                            <span class="menu-item-price text-lg">₱ 700</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">Also called Bulalo or beef shank soup. This is a perfect cold weather food. This is one Filipino Soup Recipe that you will surely love.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1 border-b border-gray-800 pb-2 border-dashed">
+                            <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">La Bouillabaisse (Serv 3|4)</h4>
+                            <span class="menu-item-price text-lg">₱ 500</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">A famous traditional fish soup originating from the port city of Marseille, in the Provence region of southern France.</p>
+                    </div> 
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1 border-b border-gray-800 pb-2 border-dashed">
+                            <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">The Balbacua Tradition</h4>
+                            <span class="menu-item-price text-lg">₱ 500</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">A rich and savory Filipino beef stew. It is a popular comfort food known for its tender, slow-cooked, collagen-rich beef parts and thick, gelatinous sauce.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1 border-b border-gray-800 pb-2 border-dashed">
+                            <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Piedmontese Beef carpaccio</h4>
+                            <span class="menu-item-price text-lg">₱ 500</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">Beef carpaccio is a classic Italian appetizer of paper-thin slices of raw beef served with various dressings and garnishes.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1 border-b border-gray-800 pb-2 border-dashed">
+                            <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Salad Romaine à la César</h4>
+                            <span class="menu-item-price text-lg">₱ 500</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">The Caesar salad is a green salad of romaine lettuce and crunchy croutons dressed with a classic emulsion-based dressing and Parmesan cheese.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1 border-b border-gray-800 pb-2 border-dashed">
+                            <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">"Bistrot" Chicken Salad à la parisienne</h4>
+                            <span class="menu-item-price text-lg">₱ 500</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">An elevated composition of confit chicken, crisp butter lettuce, asparagus tips, and petite marble potatoes. Finished with a classic vinaigrette.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <div class="section-header">
+                    <h3>Les Classiques (Europe Favorites)</h3>
+                </div>
+                <div class="space-y-16">
+                    
+                    <div class="featured-item rounded-lg overflow-hidden relative group md:flex">
+                        <span class="featured-badge">Chef's Signature</span>
+                        <div class="md:w-1/2 relative min-h-[300px]">
+                            <img loading="lazy" src="https://i.imgur.com/1L8vPd6.jpg" alt="Tomahawk Steak" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent md:bg-gradient-to-t"></div>
+                        </div>
+                        
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-3xl text-white font-medium brand-font text-gold-gradient">COTE DE BOEUF TOMAHAWK</h4>
+                            </div>
+                            <span class="menu-item-price text-2xl mb-6 block">₱ 2,500</span>
+                            <p class="text-gray-300 mb-6 leading-relaxed text-lg">A thick-cut, bone-in ribeye steak known for its impressive presentation and rich, buttery flavor. Distinguished by the long, frenched rib bone.</p>
+                            <p class="text-sm text-yellow-500 uppercase tracking-wider font-semibold flex items-center"><i class="fas fa-star mr-2 animate-pulse"></i>Presented with Pommes Purée Truffée.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-yellow-500 brand-font text-xl mb-8 border-l-4 border-yellow-600 pl-4 inline-block">Beef Collection</h4>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-48">
+                                    <img loading="lazy" src="https://i.imgur.com/F9BcRz3.jpg" alt="Steak Frites" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Steak Frites "Bistrot"</h4>
+                                        <span class="menu-item-price text-lg">₱ 900</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">A classic French dish consisting of steak and french fries. Simple yet flavorful. The french fries can be replaced by vegetables with carrots sautee and grilled Broccoli.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-48">
+                                    <img loading="lazy" src="https://i.imgur.com/RCbLLnd.jpg" alt="Filet Mignon" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font truncate" title="Filet Mignon accompanied by Pommes Purée">Filet Mignon & Pommes Purée</h4>
+                                        <span class="menu-item-price text-lg">₱ 1,000</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">A luxurious, center-cut tenderloin, expertly pan-seared. Served with Silken Pommes Purée.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-yellow-500 brand-font text-xl mb-8 mt-12 border-l-4 border-yellow-600 pl-4 inline-block">Bistrot gourmand Collection</h4>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/2SlzFhK.jpg" alt="Chef's selection of curated meats" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Chef's selection of curated meats (Serv 3|4)</h4>
+                                        <span class="menu-item-price text-lg">₱ 890</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">A curated selection of artisanal cured meats, country-style terrine, Salami,prosciutto, Mortadella. Served with house pickles, crackers, fruits and crusty brown bread.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                     <img loading="lazy" src="https://i.imgur.com/S5XlNwg.jpg" alt="The gourmet & grilled sausages platter" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">The gourmet & Grilled Sausages platter (Serv 3|4)</h4>
+                                        <span class="menu-item-price text-lg">₱ 950</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Featuring a variety of cooked sausages served with mustards, pickles, cheeses, and breads.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/dg6CJpe.jpg" alt="Signature creamy croquetas" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Signature Creamy Croquetas (Serv 3|4)</h4>
+                                        <span class="menu-item-price text-lg">₱ 600</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Golden-fried morsels of velvety béchamel encased in a delicate, crispy crumb. A melt-in-your-mouth Spanish classic.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/oqkL2Ob.jpg" alt="Chicken Cordon Bleu" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Chicken Cordon Bleu in a velvety beetroot cream sauce</h4>
+                                        <span class="menu-item-price text-lg">₱ 360</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Indulge in our tender chicken cordon bleu, filled with ham and Swiss cheese, pan-seared to perfection. It is then enveloped in a rich and velvety beetroot cream sauce that adds a touch of earthy sweetness and a vibrant splash of color to the dish.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-yellow-500 brand-font text-xl mb-8 mt-12 border-l-4 border-yellow-600 pl-4 inline-block">Cucina Italiana Collection</h4>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/1RfhpiK.jpg" alt="Tagliatelle Carbonara" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Tagliatelle Carbonara</h4>
+                                        <span class="menu-item-price text-lg">₱ 290</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Silky ribbons of pasta coated in a rich, velvety sauce of eggs and hard cheese. Finished with crispy bits of cured pancetta and a generous dusting of cracked black pepper.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/PvqxxFQ.jpg" alt="Truffle Rigatoni" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Truffle Rigatoni</h4>
+                                        <span class="menu-item-price text-lg">₱ 290</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">Hearty rigatoni pasta enveloped in a luxurious, truffle-infused cheese sauce.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/j6VkqM0.jpg" alt="Pizza Pepperoni" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Pizza Pepperoni (Serv 3|4)</h4>
+                                        <span class="menu-item-price text-lg">₱ 450</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">A timeless favorite done right. Crispy dough topped with our house tomato sauce, melted mozzarella, and generous slices of premium spicy pepperoni. Finished with a sprinkle of oregano.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card group">
+                                <div class="menu-image-container h-56">
+                                    <img loading="lazy" src="https://i.imgur.com/t0qvY9d.jpg" alt="Pizza Beef & Mushrooms" class="menu-image">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex justify-between items-baseline mb-2">
+                                        <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Pizza Beef & Mushrooms (Serv 3|4)</h4>
+                                        <span class="menu-item-price text-lg">₱ 450</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400 leading-relaxed">A savory masterpiece. Tender, seasoned ground beef paired with thinly sliced earthy mushrooms. Baked with mozzarella and a hint of garlic for a rich, robust flavor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="gold-divider"></div>
+
+            <section class="mb-16">
+                <div class="section-header">
+                    <h3>Local Heritage</h3>
+                </div>
+
+                <div class="featured-item rounded-lg overflow-hidden relative group md:flex mb-16">
+                    <span class="featured-badge">Chef's Signature</span>
+                    <div class="md:w-1/2 relative min-h-[300px]">
+                        <img loading="lazy" src="https://i.imgur.com/kC41zKp.jpg" alt="Galantine de poulet farci" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent md:bg-gradient-to-t"></div>
+                    </div>
+                    
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-3xl text-white font-medium brand-font text-gold-gradient">Galantine de poulet farci (Serv 3|4)</h4>
+                        </div>
+                        <span class="menu-item-price text-2xl mb-6 block">₱ 1,200</span>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-lg">Experience a culinary masterpiece with our Rôti de Poulet à la Royale. A succulent deboned chicken is generously stuffed with a savory pork and sausage filling, nestled alongside perfectly boiled eggs. This harmonious blend of flavors is then slow-roasted to perfection, resulting in a truly unforgettable dish.</p>
+                        <p class="text-sm text-yellow-500 uppercase tracking-wider font-semibold flex items-center"><i class="fas fa-star mr-2 animate-pulse"></i>Local Masterpiece</p>
+                    </div>
+                </div>
+                
+                <div class="mb-16">
+                    <h4 class="text-yellow-500 brand-font text-xl mb-8 mt-4 border-l-4 border-yellow-600 pl-4 inline-block">Poultry Collection</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/wTS9r9E.jpg" alt="Golden Croustillant roast chicken" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Golden Croustillant roast chicken (Serv 3|4)</h4>
+                                    <span class="menu-item-price text-lg">₱ 450</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">This golden masterpiece is basted in rich butter, creating a crispy, flavorful skin that gives way to succulent, juicy meat. Each bite is a symphony of textures and tastes, perfect for sharing or enjoying as a decadent main course.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h4 class="text-yellow-500 brand-font text-xl mb-8 mt-4 border-l-4 border-yellow-600 pl-4 inline-block">Pork Collection</h4>
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/lKwhBty.jpg" alt="Pata Royal Croustillant" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Pata Royal Croustillant (Serv 3|4)</h4>
+                                    <span class="menu-item-price text-lg">₱ 950</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">The iconic Filipino feast dish. A massive, satisfyingly crunchy pork leg with tender, flavorful meat inside. Guaranteed to satisfy your craving for crunch. Served with our classic soy-vinegar-garlic dipping sauce.</p>
+                            </div>
+                        </div>
+                         <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/cNP8xJ3.jpg" alt="Pata Braisée de Bistrot" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Pata Braisée de "Bistrot" (Serv 3|4)</h4>
+                                    <span class="menu-item-price text-lg">₱ 950</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">Pata tim is a popular Filipino-Chinese dish featuring a whole pork hock that is slow-cooked until it is very tender and fall-off-the-bone in a savory-sweet sauce.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="menu-card group p-6 border-l-4 border-yellow-600/50">
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h4 class="text-xl text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Roasted Pork belly</h4>
+                                <span class="menu-item-price text-lg">₱ 450</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">Crispy pork belly is a popular dish featuring a cut of pork from the pig's abdomen, characterized by a layer of tender, juicy meat, a rich layer of fat, and a signature, shatteringly crisp skin.</p>
+                        </div>
+                         <div class="menu-card group p-6 border-l-4 border-yellow-600/50">
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h4 class="text-xl text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Grilled Pork belly</h4>
+                                <span class="menu-item-price text-lg">₱ 450</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">A dish featuring slices of meat from the underside of a pig, cooked over a grill or open flame until juicy, tender, and often with crispy edges.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h4 class="text-yellow-500 brand-font text-xl mb-8 mt-4 border-l-4 border-yellow-600 pl-4 inline-block">Sea Food Collection</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/ccZTEl6.jpg" alt="Steam Pompano" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Steam Pompano, ginger sauce (Serv 3|4)</h4>
+                                    <span class="menu-item-price text-lg">₱ 560</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">Our delicately steamed Pompano is enveloped in a fragrant and savory ginger sauce. Each bite offers a harmonious blend of sweet and piquant flavors, perfectly complementing the fish's tender texture.</p>
+                            </div>
+                        </div>
+                        <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/tRhIcta.jpg" alt="Tuna Panga" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Tuna Panga (Serv 3|4)</h4>
+                                    <span class="menu-item-price text-lg">₱ 500</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">Indulge in our succulent grilled Tuna Panga, marinated to perfection and grilled until tender. The smoky flavor of the grill is perfectly balanced with a savory glaze that enhances the natural richness of the tuna collar. Served with a side of steamed vegetables or rice.</p>
+                            </div>
+                        </div>
+                        <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/yjEK7CR.jpg" alt="Grilled Tiger Prawns" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">Grilled Tiger Prawns with Garlic Butter</h4>
+                                    <span class="menu-item-price text-lg">₱ 450</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">Experience the succulent taste of our plump Tiger Prawns, pan-seared to perfection and bathed in a rich, aromatic garlic butter sauce. Each bite is a burst of flavor, with the sweetness of the prawns perfectly complemented by the savory garlic butter. Served with a side of steamed vegetables or rice.</p>
+                            </div>
+                        </div>
+                         <div class="menu-card group">
+                            <div class="menu-image-container h-56">
+                                <img loading="lazy" src="https://i.imgur.com/eNHk5UP.jpg" alt="The Ultimate Seafood Fiesta" class="menu-image">
+                            </div>
+                            <div class="p-5">
+                                <div class="flex justify-between items-baseline mb-2">
+                                    <h4 class="text-lg text-yellow-100 font-medium group-hover:text-yellow-500 transition brand-font">The Ultimate Seafood Fiesta (Serv 3|4)</h4>
+                                    <span class="menu-item-price text-lg">₱ 990</span>
+                                </div>
+                                <p class="text-sm text-gray-400 leading-relaxed">A symphony of flavors with our Ocean's Bounty Platter. Succulent crabs, plump shrimps, and tender mussels are cooked to perfection and served hot, accompanied by sweet corn, crisp lettuce, and zesty lemon wedges. Drizzled with a rich and aromatic butter paprika sauce, this feast is a true celebration of the sea's finest treasures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </div>
 
@@ -243,7 +733,7 @@
                 <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <h3 class="text-2xl text-yellow-500 brand-font mb-8 uppercase tracking-widest relative z-10">Champagne & Sparkling</h3>
                 <div class="relative z-10 mb-8 flex justify-center">
-                     <img src="https://imgur.com/zUh4ZhJ.jpg" alt="Champagne & Sparkling" class="rounded-lg shadow-lg max-h-64 border border-yellow-500/20">
+                     <img loading="lazy" src="https://imgur.com/zUh4ZhJ.jpg" alt="Champagne & Sparkling" class="rounded-lg shadow-lg max-h-64 border border-yellow-500/20">
                 </div>
                 <div class="space-y-6 relative z-10 max-w-2xl mx-auto">
                      <div class="flex flex-col md:flex-row justify-between items-center group border-b border-gray-800/50 pb-4">
@@ -372,17 +862,17 @@
              <div class="grid md:grid-cols-3 gap-8 mt-16 px-4">
                  <div class="menu-card group">
                     <div class="menu-image-container h-56">
-                        <img src="https://imgur.com/0Eke2Fz.jpg" alt="Wine Selection 1" class="menu-image">
+                        <img loading="lazy" src="https://imgur.com/0Eke2Fz.jpg" alt="Wine Selection 1" class="menu-image">
                     </div>
                 </div>
                  <div class="menu-card group">
                     <div class="menu-image-container h-56">
-                        <img src="https://imgur.com/xdfsTqk.jpg" alt="Wine Selection 2" class="menu-image">
+                        <img loading="lazy" src="https://imgur.com/xdfsTqk.jpg" alt="Wine Selection 2" class="menu-image">
                     </div>
                 </div>
                  <div class="menu-card group">
                     <div class="menu-image-container h-56">
-                        <img src="https://imgur.com/eciYNbD.jpg" alt="Wine Selection 3" class="menu-image">
+                        <img loading="lazy" src="https://imgur.com/eciYNbD.jpg" alt="Wine Selection 3" class="menu-image">
                     </div>
                 </div>
             </div>
@@ -401,7 +891,7 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/opgXDoW.jpg" alt="Parisian Martini" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/opgXDoW.jpg" alt="Parisian Martini" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">The Parisian Martini</h4>
@@ -411,7 +901,7 @@
                     </div>
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/rSC785E.jpg" alt="Old Fashioned" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/rSC785E.jpg" alt="Old Fashioned" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Lounge Old Fashioned</h4>
@@ -421,7 +911,7 @@
                     </div>
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/4djcbX4.jpg" alt="Bistrot Mojito" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/4djcbX4.jpg" alt="Bistrot Mojito" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Le Bistrot Mojito</h4>
@@ -432,7 +922,7 @@
                     
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/71Co6XI.jpg" alt="Weng-Weng" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/71Co6XI.jpg" alt="Weng-Weng" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Weng-Weng</h4>
@@ -443,7 +933,7 @@
 
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/QggLsAx.jpg" alt="Margarita" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/QggLsAx.jpg" alt="Margarita" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Margarita</h4>
@@ -454,7 +944,7 @@
 
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://i.imgur.com/Xajka3X.jpg" alt="Negroni" class="menu-image">
+                            <img loading="lazy" src="https://i.imgur.com/Xajka3X.jpg" alt="Negroni" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Negroni</h4>
@@ -465,7 +955,7 @@
 
                      <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://imgur.com/JYHxxjX.jpg" alt="Whiskey Sour" class="menu-image">
+                            <img loading="lazy" src="https://imgur.com/JYHxxjX.jpg" alt="Whiskey Sour" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Whiskey Sour</h4>
@@ -476,7 +966,7 @@
 
                      <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://imgur.com/QVkqW2U.jpg" alt="Piña Colada" class="menu-image">
+                            <img loading="lazy" src="https://imgur.com/QVkqW2U.jpg" alt="Piña Colada" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Piña Colada</h4>
@@ -487,7 +977,7 @@
 
                     <div class="menu-card group">
                         <div class="menu-image-container h-56">
-                            <img src="https://imgur.com/N6VZVz6.jpg" alt="Manhattan" class="menu-image">
+                            <img loading="lazy" src="https://imgur.com/N6VZVz6.jpg" alt="Manhattan" class="menu-image">
                         </div>
                         <div class="p-6 text-center">
                             <h4 class="text-xl text-yellow-500 font-bold brand-font mb-2">Manhattan</h4>
@@ -566,7 +1056,7 @@
                     </div>
                     <div class="bg-zinc-900/60 p-6 border border-yellow-900/30 rounded-lg group hover:bg-zinc-800 hover:border-yellow-500/50 transition duration-300 flex flex-col justify-center min-h-[120px]">
                         <div class="text-yellow-100 brand-font text-lg mb-2 group-hover:text-yellow-500">Johnnie Walker Black</div>
-                        <div class="menu-item-price">₱ 2,500 </div>
+                        <div class="menu-item-price">₱ 2,500</div>
                     </div>
                     <div class="bg-zinc-900/60 p-6 border border-yellow-900/30 rounded-lg group hover:bg-zinc-800 hover:border-yellow-500/50 transition duration-300 flex flex-col justify-center min-h-[120px]">
                         <div class="text-yellow-100 brand-font text-lg mb-2 group-hover:text-yellow-500">Singleton 12 years</div>
@@ -738,7 +1228,6 @@
 			<li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font">Hoegaarden</span><span class="menu-item-price text-lg">₱ 180</span></li>
 			<li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font">Budweiser</span><span class="menu-item-price text-lg">₱ 180</span></li>
 			<li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font">Estrella</span><span class="menu-item-price text-lg">₱ 180</span></li>
-                        <li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font"> </span><span class="menu-item-price text-lg"> </span></li>
 			<li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font">Bucket Smirnoff Mule</span><span class="menu-item-price text-lg">₱ 600</span></li>
                         <li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font">Bucket Heineken</span><span class="menu-item-price text-lg">₱ 825</span></li>
                         <li class="flex justify-between border-b border-gray-800 pb-2 group items-end"><span class="text-gray-300 group-hover:text-yellow-500 transition text-lg brand-font">Bucket Imported beers</span><span class="menu-item-price text-lg">₱ 980</span></li>
@@ -778,6 +1267,10 @@
             <p class="text-xs text-gray-600 uppercase tracking-widest">Prices include VAT • Service Charge not included</p>
         </div>
     </footer>
+    
+    <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-yellow-600 hover:bg-yellow-500 text-black p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         function filterMenu(category) {
@@ -804,6 +1297,23 @@
             const activeButton = event.target.closest('button');
             activeButton.classList.add('active');
             activeButton.classList.remove('text-yellow-500');
+        }
+
+        // Back to Top Button Logic
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.remove("opacity-0", "invisible");
+                backToTopBtn.classList.add("opacity-100", "visible");
+            } else {
+                backToTopBtn.classList.add("opacity-0", "invisible");
+                backToTopBtn.classList.remove("opacity-100", "visible");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
